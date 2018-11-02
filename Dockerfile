@@ -7,5 +7,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     git
 
-# Default command
-CMD ["bash"]
+COPY . /tmp
+
+RUN Rscript install.R
+
+# Inherited default behavior:
+# - runs bash
+# - starts in /tmp
