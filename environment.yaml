@@ -1,0 +1,36 @@
+# install: conda env create --file environment.yaml
+# update: conda env update --file environment.yaml
+name: dsc-mouthwash
+channels:
+- conda-forge
+- defaults
+dependencies:
+# dsc core
+- billiard
+- cython
+- fasteners
+- graphviz
+- h5py
+- imageio
+- msgpack-python
+- networkx
+- numexpr
+- numpy
+- pandas
+- pexpect
+- psutil
+- pyarrow
+- pydotplus
+- pygments
+- python=3.6
+- python-xxhash
+- pyyaml
+- sqlalchemy
+- sympy
+- tqdm
+- pip:
+  - dsc
+# dsc R api
+- r-base
+- r-devtools
+- unzip
