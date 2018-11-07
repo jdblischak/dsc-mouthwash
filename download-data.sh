@@ -24,5 +24,8 @@ wget -P $outdir http://www.tau.ac.il/~elieis/HKG/HK_genes.txt
 echo "Downloading NCBI-to-Ensembl gene mappings"
 wget -P $outdir ftp://ftp.ncbi.nih.gov/gene/DATA/gene2ensembl.gz
 
+echo "Downloading Lin2017 housekeeping genes"
+wget -P $outdir https://raw.githubusercontent.com/dcgerard/mouthwash_sims/master/Data/h-scHKgenes.csv
+
 echo "Downloading Ensembl gene IDs for Lin2017 housekeeping genes"
 wget -P $outdir https://raw.githubusercontent.com/dcgerard/mouthwash_sims/master/Data/lin_hk_genes.csv
