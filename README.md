@@ -9,7 +9,7 @@
 
 ## Setup
 
-The Docker image is based on [continuumio/miniconda3/][].
+The Docker image is based on [continuumio/miniconda3][].
 
 ```
 # Build image
@@ -20,7 +20,7 @@ docker run --rm -it dsc-mouthwash
 docker run -i -t -p 8888:8888 continuumio/miniconda3 /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='0.0.0.0' --port=8888 --no-browser --allow-root"
 ```
 
-[continuumio/miniconda3/]: https://hub.docker.com/r/continuumio/miniconda3/
+[continuumio/miniconda3]: https://hub.docker.com/r/continuumio/miniconda3/
 
 Alternatively if you have conda installed, you can install the environment
 directly on your machine.

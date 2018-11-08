@@ -7,10 +7,6 @@ FROM continuumio/miniconda3:4.3.27p0
 
 MAINTAINER John Blischak, jdblischak@gmail.com
 
-# Specify BASH shell in order to use `source` to activate the conda environment
-# below
-SHELL [ "/bin/bash", "-c" ]
-
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     nano
@@ -21,9 +17,8 @@ COPY . /root/dsc-mouthwash
 
 
 RUN conda env create --file environment.yaml
-RUN source activate dsc-mouthwash
 
-RUN Rscript install.R
+RUN /opt/conda/envs/dsc-mouthwash/bin/Rscript install.R
 
 # Activte the environment when the user starts a new container
 RUN echo "source activate dsc-mouthwash" >> ~/.bashrc
