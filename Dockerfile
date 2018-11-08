@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:4.3.27p0
+FROM continuumio/miniconda3:4.5.11
 # https://hub.docker.com/r/continuumio/miniconda3/
 # https://github.com/ContinuumIO/docker-images/blob/miniconda3-4.3.27p0/miniconda3/Dockerfile
 
@@ -7,8 +7,15 @@ FROM continuumio/miniconda3:4.3.27p0
 
 MAINTAINER John Blischak, jdblischak@gmail.com
 
+# Specify BASH shell in order to use `source` to activate the conda environment
+# below
+SHELL [ "/bin/bash", "-c" ]
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+    g++ \
+    gcc \
+    gfortran \
     nano
 
 RUN mkdir /root/dsc-mouthwash
@@ -18,8 +25,10 @@ COPY . /root/dsc-mouthwash
 
 RUN conda env create --file environment.yaml
 
-RUN /opt/conda/envs/dsc-mouthwash/bin/Rscript install.R
+RUN source activate dsc-mouthwash && Rscript install.R
+
+RUN conda clean -ya
 
 # Activte the environment when the user starts a new container
-RUN echo "source activate dsc-mouthwash" >> ~/.bashrc
+RUN echo "conda activate dsc-mouthwash" >> ~/.bashrc
 CMD [ "/bin/bash" ]

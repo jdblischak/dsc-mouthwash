@@ -34,3 +34,5 @@ dependencies:
 - r-base
 - r-devtools
 - unzip
+# compile R packages
+- make
