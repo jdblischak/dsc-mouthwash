@@ -33,7 +33,11 @@ RUN conda install -y \
   pyzmq \
   setuptools \
   tqdm
-RUN pip install -U --upgrade-strategy only-if-needed sos
+RUN pip install --no-deps \
+  sos \
+  sos-bioinfo \
+  sos-pbs \
+  sos-rq
 
 # Install dsc
 RUN conda install -y \
@@ -47,7 +51,9 @@ RUN conda install -y \
   sqlalchemy \
   sympy \
   tzlocal
-RUN pip install -U --upgrade-strategy only-if-needed dsc
+RUN pip install --no-deps \
+  dsc \
+  PTable
 
 RUN mkdir /root/dsc-mouthwash
 WORKDIR /root/dsc-mouthwash
