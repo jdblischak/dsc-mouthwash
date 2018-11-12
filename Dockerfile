@@ -105,4 +105,6 @@ RUN Rscript install.R
 
 RUN conda clean -ya
 
+COPY download-data.sh /root/dsc-mouthwash
+
 CMD [ "/bin/bash" ]
