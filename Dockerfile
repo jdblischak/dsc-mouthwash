@@ -70,6 +70,8 @@ RUN conda install -y \
 RUN conda install -y \
   r-ashr \
   r-assertthat \
+  r-coda \
+  r-corpcor \
   r-ggthemes \
   r-irlba \
   r-proc \
@@ -78,6 +80,7 @@ RUN conda install -y \
   r-r.utils \
   r-reshape2 \
   r-ruv \
+  r-svd \
   r-tidyverse \
   r-xtable
 
