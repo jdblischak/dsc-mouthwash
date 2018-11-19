@@ -30,3 +30,59 @@ conda env create --file environment.yaml
 source activate dsc-mouthwash
 Rscript install.R
 ```
+
+## Notes
+
+From [Section 4.1][sec4.1]:
+
+[sec4.1]: https://academic.oup.com/biostatistics/advance-article/doi/10.1093/biostatistics/kxy029/5050477#118582529
+
+### simulate
+
+* $p$ (genes) - 1000
+* $\pi_0$ (proportion of null genes) - 0.5, 0.9, 1
+* $n$ (samples) - 6, 10, 20, 40
+* $m$ (control genes) - 10, 100
+
+Number of combinbations = 3 * 4 * 2 = 24
+
+500 replicates of each combination, therefore 500 * 24 = 12,000 simulated datasets.
+
+### analyze
+
+1. OLS
+1. SVA
+1. CATErr
+1. CATErr+MAD
+1. RUV2
+1. RUV3
+1. CATEnc
+1. CATEnc+MAD
+1. CATEnc+Cal
+1. MOUTHWASH
+1. BACKWASH
+
+### score
+
+* AUC - ability to distinguish null versus non-null genes
+* $\pi_0$ - estimated proportion of null genes
+
+From [section 4.3][sec4.3]:
+
+[sec4.3]: https://academic.oup.com/biostatistics/advance-article/doi/10.1093/biostatistics/kxy029/5050477#118582544
+
+### simulate
+
+* GTEx tissue (23)
+* List of control genes (2)
+
+Therefore 23 * 2 = 46 datasets.
+
+### analyze
+
+Same as above
+
+### score
+
+* $s$ - number of sex-chromosome genes in top 100 most significant results
+* $\pi_0$ - estimated proportion of null genes
