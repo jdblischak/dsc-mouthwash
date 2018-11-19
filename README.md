@@ -1,5 +1,6 @@
 # mouthwash DSC
 
+[![Travis-CI Build Status](https://travis-ci.org/jdblischak/dsc-mouthwash.svg?branch=master)](https://travis-ci.org/jdblischak/dsc-mouthwash)
 [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/jdblischak/dsc-mouthwash/master)
 
 [Dynamic Statistical Comparisons][dsc] for [MOUTHWASH simulations][mouthwash].
