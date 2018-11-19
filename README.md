@@ -23,11 +23,20 @@ docker run -i -t -p 8888:8888 continuumio/miniconda3 /bin/bash -c "/opt/conda/bi
 [continuumio/miniconda3]: https://hub.docker.com/r/continuumio/miniconda3/
 
 Alternatively if you have conda installed, you can install the environment
-directly on your machine.
+directly on your machine. Note that if you want to build the R packages from
+source in `install.R`, you'll need the common compilers g++, gcc, and gfortran
+installed on your system.
 
 ```
-conda env create --file environment.yaml
+conda create -n dsc-mouthwash \
+  -c conda-forge -c bioconda -c defaults \
+  --file requirements/sos-conda \
+  --file requirements/dsc-conda \
+  --file requirements/mouthwash-conda
 source activate dsc-mouthwash
+pip install --no-deps \
+  -r requirements/sos-pip \
+  -r requirements/dsc-pip
 Rscript install.R
 ```
 

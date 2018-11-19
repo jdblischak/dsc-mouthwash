@@ -1,0 +1,12 @@
+h5py
+msgpack-python
+numexpr
+numpy
+pandas >=0.23.4
+pyarrow >=0.5.0
+python >=3.6
+r-base
+r-devtools
+sqlalchemy
+sympy
+tzlocal

@@ -1,0 +1,14 @@
+fasteners
+jinja2
+nbformat
+networkx
+pexpect
+psutil
+pydot
+pydotplus
+pygments
+python >=3.6
+pyyaml
+pyzmq
+setuptools
+tqdm

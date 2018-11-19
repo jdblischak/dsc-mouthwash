@@ -15,80 +15,23 @@ RUN conda config --add channels defaults && \
     conda config --add channels bioconda && \
     conda config --add channels conda-forge
 
-RUN conda update --all --yes
-
-# Install sos
-RUN conda install -y \
-  fasteners \
-  jinja2 \
-  nbformat \
-  networkx \
-  pexpect \
-  psutil \
-  pydot \
-  pydotplus \
-  pygments \
-  python \
-  pyyaml \
-  pyzmq \
-  setuptools \
-  tqdm
-RUN pip install --no-deps \
-  sos \
-  sos-bioinfo \
-  sos-pbs \
-  sos-rq
-
-# Install dsc
-RUN conda install -y \
-  h5py \
-  msgpack-python \
-  numexpr \
-  numpy \
-  pandas >=0.23.4 \
-  pyarrow >=0.5.0 \
-  python >=3.6 \
-  sqlalchemy \
-  sympy \
-  tzlocal
-RUN pip install --no-deps \
-  dsc \
-  PTable
+RUN conda config \
+  --set always_yes yes \
+  --set changeps1 no \
+  --set auto_update_conda False
 
 RUN mkdir /root/dsc-mouthwash
 WORKDIR /root/dsc-mouthwash
-COPY .Rprofile /root/dsc-mouthwash
+COPY requirements/ /root/dsc-mouthwash/requirements/
 
-# Install dsc R API
-RUN conda install -y \
-  r-base \
-  r-devtools
-RUN which Rscript > rexec.txt
+RUN conda install \
+  --file requirements/sos-conda \
+  --file requirements/dsc-conda \
+  --file requirements/mouthwash-conda
 
-# Install mouthwash Bioconductor packages
-RUN conda install -y \
-  bioconductor-biomart \
-  bioconductor-limma \
-  bioconductor-sva \
-  bioconductor-qvalue
-
-# Install mouthwash CRAN packages
-RUN conda install -y \
-  r-ashr \
-  r-assertthat \
-  r-coda \
-  r-corpcor \
-  r-ggthemes \
-  r-irlba \
-  r-proc \
-  r-rcpparmadillo \
-  r-rcppprogress \
-  r-r.utils \
-  r-reshape2 \
-  r-ruv \
-  r-svd \
-  r-tidyverse \
-  r-xtable
+RUN pip install --no-deps \
+  -r requirements/sos-pip \
+  -r requirements/dsc-pip
 
 # Install remaining R packages from source
 # CRAN: bfa, cate
@@ -99,11 +42,11 @@ RUN apt-get update && \
     gcc \
     gfortran \
     nano
-RUN conda install -y make
+COPY .Rprofile /root/dsc-mouthwash
 COPY install.R /root/dsc-mouthwash
 RUN Rscript install.R
 
-RUN conda clean -ya
+RUN conda clean --all
 
 COPY download-data.sh /root/dsc-mouthwash
 
