@@ -30,7 +30,7 @@ installed on your system.
 
 ```
 conda create -n dsc-mouthwash \
-  -c conda-forge -c bioconda -c defaults \
+  -c conda-forge -c bioconda -c defaults -c jdblischak \
   --file requirements/sos-conda \
   --file requirements/dsc-conda \
   --file requirements/mouthwash-conda
