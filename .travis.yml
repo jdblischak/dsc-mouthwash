@@ -34,7 +34,7 @@ install:
   - sudo apt-get update
   - sudo apt-get install -y --no-install-recommends
       g++ gcc gfortran
-  - travis_retry Rscript install.R
+  - travis_retry bash install.sh
 
 before_script:
   - bash download-data.sh

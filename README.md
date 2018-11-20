@@ -10,6 +10,9 @@
 
 ## Setup
 
+The necessary computational environment must be installed on a linux-64
+machine. Below are instructions for using Docker or conda.
+
 The Docker image is based on [continuumio/miniconda3][].
 
 ```
