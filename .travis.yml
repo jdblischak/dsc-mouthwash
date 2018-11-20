@@ -1,6 +1,11 @@
 language: python
 python:
   - "3.6"
+
+env:
+  global:
+  - SIMS=$HOME/mouthwash_sims
+
 install:
   # Install Miniconda3
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
@@ -30,6 +35,12 @@ install:
       g++ gcc gfortran
   - Rscript install.R
 
-script:
+before_script:
   - bash download-data.sh
-  - ls -lh data/
+  - git clone https://github.com/dcgerard/mouthwash_sims.git $SIMS
+  - cp data/* $SIMS/Data/
+
+script:
+  - cd $SIMS
+  - ls -lh Data/
+  - make -n all
