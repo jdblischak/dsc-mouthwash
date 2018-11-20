@@ -11,7 +11,8 @@ FROM continuumio/miniconda3:4.5.11
 
 MAINTAINER John Blischak, jdblischak@gmail.com
 
-RUN conda config --add channels defaults && \
+RUN conda config --add channels jdblischak && \
+    conda config --add channels defaults && \
     conda config --add channels bioconda && \
     conda config --add channels conda-forge
 
