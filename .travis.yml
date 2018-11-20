@@ -16,17 +16,17 @@ install:
   - conda update -q conda
   - conda info -a
   # Install conda packages
-  - conda install \
-      --file requirements/sos-conda \
-      --file requirements/dsc-conda \
+  - conda install
+      --file requirements/sos-conda
+      --file requirements/dsc-conda
       --file requirements/mouthwash-conda
   # Install Python packages from PyPI
-  - pip install --no-deps \
-      -r requirements/sos-pip \
+  - pip install --no-deps
+      -r requirements/sos-pip
       -r requirements/dsc-pip
   # Install R packages from CRAN and GitHub
   - sudo apt-get update
-  - sudo apt-get install -y --no-install-recommends \
+  - sudo apt-get install -y --no-install-recommends
       g++ gcc gfortran
   - Rscript install.R
 
