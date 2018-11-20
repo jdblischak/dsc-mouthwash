@@ -44,4 +44,4 @@ before_script:
 script:
   - cd $SIMS
   - ls -lh Data/
-  - make -n all
+  - make one_data
