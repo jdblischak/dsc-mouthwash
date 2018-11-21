@@ -44,4 +44,4 @@ before_script:
 script:
   - cd $SIMS
   - ls -lh Data/
-  - travis_wait 45 make one_data
+  - make -n all
