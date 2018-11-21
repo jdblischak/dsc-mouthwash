@@ -28,6 +28,7 @@ COPY requirements/ /root/dsc-mouthwash/requirements/
 RUN conda install \
   --file requirements/sos-conda \
   --file requirements/dsc-conda \
+  --file requirements/dscrutils-conda \
   --file requirements/mouthwash-conda
 
 RUN pip install --no-deps \

@@ -22,6 +22,7 @@ install:
       --file requirements/sos-conda
       --file requirements/dsc-conda
       --file requirements/mouthwash-conda
+      --file requirements/dscrutils-conda
   # Install Python packages from PyPI
   - pip install --no-deps
       -r requirements/sos-pip

@@ -36,6 +36,7 @@ conda create -n dsc-mouthwash \
   -c conda-forge -c bioconda -c defaults -c jdblischak \
   --file requirements/sos-conda \
   --file requirements/dsc-conda \
+  --file requirements/dscrutils-conda \
   --file requirements/mouthwash-conda
 source activate dsc-mouthwash
 pip install --no-deps \
