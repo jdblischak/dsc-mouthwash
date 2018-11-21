@@ -46,3 +46,4 @@ script:
   - cd $SIMS
   - ls -lh Data/
   - make -n all
+  - dsc -h

@@ -11,6 +11,7 @@ pydot
 pydotplus
 pygments
 python >=3.6
+python-xxhash
 pyyaml
 pyzmq
 setuptools
