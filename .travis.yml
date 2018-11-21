@@ -37,6 +37,7 @@ install:
   - travis_retry bash install.sh
 
 before_script:
+  - conda list
   - bash download-data.sh
   - git clone https://github.com/dcgerard/mouthwash_sims.git $SIMS
   - cp data/* $SIMS/Data/
