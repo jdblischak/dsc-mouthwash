@@ -2,7 +2,6 @@ bioconductor-biomart
 bioconductor-limma
 bioconductor-sva
 bioconductor-qvalue
-make
 r-ashr
 r-assertthat
 r-base
@@ -21,7 +20,10 @@ r-rcppprogress
 r-r.utils
 r-reshape2
 r-ruv
+r-seqgendiff
 r-svd
 r-tidyverse
+r-vicar
 r-xtable
 unzip
+wget

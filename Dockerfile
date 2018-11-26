@@ -11,6 +11,10 @@ FROM continuumio/miniconda3:4.5.11
 
 MAINTAINER John Blischak, jdblischak@gmail.com
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    nano
+
 RUN conda config --add channels jdblischak && \
     conda config --add channels defaults && \
     conda config --add channels bioconda && \
@@ -36,14 +40,7 @@ RUN pip install --no-deps \
   -r requirements/dsc-pip
 
 # Install remaining R packages from source
-# CRAN: bfa, cate
-# GitHub: seqgendiff, vicar
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    g++ \
-    gcc \
-    gfortran \
-    nano
+# GitHub: dscrutils
 COPY .Rprofile /root/dsc-mouthwash
 COPY install.R /root/dsc-mouthwash
 RUN Rscript install.R
