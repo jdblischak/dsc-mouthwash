@@ -2,8 +2,16 @@
 
 # Simulate:
 
-generate_data <- function(csv, Ngene, nullpi, Nsamp, ncontrol, skip_gene, log2foldsd, ) {
-  mat <- t(as.matrix(read.csv(csv, header = TRUE)[, -c(1,2)]))
+generate_data <- function(nullpi, Nsamp, ncontrol) {
+  # Constants
+  log2foldsd <- 0.8
+  Ngene <- 1000
+  skip_gene <- 0
+
+  csv <- "data/gtex-muscle-subset.csv"
+  mat <- as.matrix(read.table(csv, sep = ",", row.names = 1))
+  stopifnot(ncol(mat) == Ngene)
+
   d_out <- seqgendiff::poisthin(mat = mat,
                                 nsamp = Nsamp,
                                 ngene = Ngene,

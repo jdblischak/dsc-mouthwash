@@ -1,8 +1,6 @@
 #!/usr/bin/env dsc
 
-generate_data: generate_data.R + R(d = generate_data(csv, Ngene, nullpi, Nsamp, ncontrol))
-  csv: "data/gtex/muscle.csv"
-  Ngene: 1000
+generate_data: generate_data.R + R(d = generate_data(nullpi, Nsamp, ncontrol))
   nullpi: 0.5, 0.9, 1
   Nsamp: 6, 10, 20, 40
   ncontrol: 10, 100

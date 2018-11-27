@@ -49,4 +49,8 @@ RUN conda clean --all
 
 COPY download-data.sh /root/dsc-mouthwash
 
+COPY code/ /root/dsc-mouthwash/code/
+COPY data/gtex-muscle-subset.csv /root/dsc-mouthwash/data/
+COPY mouthwash.dsc /root/dsc-mouthwash
+
 CMD [ "/bin/bash" ]
