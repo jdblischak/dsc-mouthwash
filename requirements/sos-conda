@@ -16,5 +16,6 @@ pyyaml
 pyzmq
 rq
 setuptools
+sos >=0.17.4
 tqdm
 xxhash

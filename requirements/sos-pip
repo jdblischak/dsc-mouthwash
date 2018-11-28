@@ -1,4 +1,3 @@
-sos >=0.17.4
 sos-bioinfo
 sos-pbs >=0.9.17.0
 sos-rq
