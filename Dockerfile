@@ -36,7 +36,6 @@ RUN conda install \
   --file requirements/mouthwash-conda
 
 RUN pip install --no-deps \
-  -r requirements/sos-pip \
   -r requirements/dsc-pip
 
 # Install remaining R packages from source
