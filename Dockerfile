@@ -35,9 +35,6 @@ RUN conda install \
   --file requirements/dscrutils-conda \
   --file requirements/mouthwash-conda
 
-RUN pip install --no-deps \
-  -r requirements/dsc-pip
-
 # Install remaining R packages from source
 # GitHub: dscrutils
 COPY .Rprofile /root/dsc-mouthwash

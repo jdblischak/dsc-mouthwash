@@ -39,8 +39,6 @@ conda create -n dsc-mouthwash \
   --file requirements/dscrutils-conda \
   --file requirements/mouthwash-conda
 source activate dsc-mouthwash
-pip install --no-deps \
-  -r requirements/dsc-pip
 Rscript install.R
 ```
 

@@ -23,9 +23,6 @@ install:
       --file requirements/dsc-conda
       --file requirements/mouthwash-conda
       --file requirements/dscrutils-conda
-  # Install Python packages from PyPI
-  - pip install --no-deps
-      -r requirements/dsc-pip
   # Install R package dscrutils from GitHub
   - travis_retry bash install.sh
 

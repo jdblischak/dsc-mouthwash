@@ -1,3 +1,4 @@
+dsc
 h5py
 msgpack-python
 numexpr
@@ -7,6 +8,7 @@ ptable
 pyarrow >=0.5.0
 python >=3.6
 sos >=0.17.4
+sos-pbs >=0.9.17.0
 sqlalchemy
 sympy
 tzlocal
