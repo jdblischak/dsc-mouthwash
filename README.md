@@ -32,7 +32,9 @@ directly on your machine.
 ```
 conda create -n dsc-mouthwash \
   -c conda-forge -c bioconda -c defaults -c jdblischak \
-  --file misc --file python --file r
+  --file requirements/misc \
+  --file requirements/python \
+  --file requirements/r
 source activate dsc-mouthwash
 ```
 

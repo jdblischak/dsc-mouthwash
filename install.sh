@@ -12,7 +12,9 @@ conda update -q conda
 conda info -a
 
 # Install conda packages
-conda install --file misc --file python --file r
+conda install --file requirements/misc \
+              --file requirements/python \
+              --file requirements/r
 
 # Install dscrutils from GitHub repo subdirectory
 wget -O /tmp/dsc.zip https://github.com/stephenslab/dsc/archive/master.zip
