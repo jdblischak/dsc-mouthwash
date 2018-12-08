@@ -19,11 +19,11 @@ r-rcpparmadillo
 r-rcppprogress
 r-r.utils
 r-reshape2
+r-reticulate
 r-ruv=0.9.6
 r-seqgendiff
 r-svd
 r-tidyverse
 r-vicar=0.1_9
 r-xtable
-unzip
-wget
+r-yaml

@@ -1,16 +1,9 @@
 # Requirements
 
-Dependencies available from Anaconda Cloud:
+Install requirements from Anaconda Cloud:
 
-* dsc-conda
-* sos-conda
-* mouthwash-conda
-
-Install with `conda install --file`.
-
-Dependencies avaiable on PyPI:
-
-* dsc-pip
-* sos-pip
-
-Install with `pip install --no-deps --file`.
+```
+conda install -c conda-forge -c bioconda \
+  -c defaults -c jdblischak \
+  --file misc --file python --file r
+```
