@@ -67,7 +67,7 @@ Number of combinbations = 3 * 4 * 2 = 24
 1. CATEnc+MAD
 1. CATEnc+Cal
 1. MOUTHWASH
-1. BACKWASH
+1. BACKWASH (our current plan is to skip this b/c it runs too long w/o sufficient improvement)
 
 ### score
 
