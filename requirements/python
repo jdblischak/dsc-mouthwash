@@ -2,3 +2,4 @@ dsc
 python-graphviz
 imageio
 pillow
+sos=0.17.7
