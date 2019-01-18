@@ -1,4 +1,4 @@
-#!/usr/bin/env dsc
+#!/usr/bin/env Rscript
 
 # Simulate:
 
