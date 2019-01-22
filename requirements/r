@@ -9,7 +9,7 @@ r-bfa
 r-cate
 r-coda
 r-corpcor
-r-dscrutils
+r-dscrutils=0.3.2
 r-esabcv
 r-ggthemes
 r-irlba

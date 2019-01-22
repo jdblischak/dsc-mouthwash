@@ -1,5 +1,5 @@
-dsc
+dsc=0.3.2
 python-graphviz
 imageio
 pillow
-sos=0.17.7
+sos=0.18.2
