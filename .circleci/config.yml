@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    working_directory: /dsc-mouthwash
+    docker:
+      - image: continuumio/miniconda3:latest
+    steps:
+      - checkout
+      - run:
+          name: Installation
+          command: |
+            bash install.sh
+            conda list
+      - run:
+          name: Download data
+          command: |
+            bash download-data.sh
+            ls -lh data/
+      - run:
+          name: Run DSC
+          command: |
+            dsc --version
+            dsc mouthwash.dsc -h
+            dsc mouthwash.dsc
+      - store_artifacts:
+          path: mouthwash/
+      - store_artifacts:
+          path: mouthwash.html
